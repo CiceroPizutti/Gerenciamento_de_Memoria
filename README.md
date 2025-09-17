@@ -3,7 +3,7 @@
 
 ## 👥 Integrantes da Dupla
 - **Cícero Pizutti** - 68612
-- **Samuel** - 
+- **Samuel Rait** - 1999543
 
 ## 📋 Descrição do Projeto
 
