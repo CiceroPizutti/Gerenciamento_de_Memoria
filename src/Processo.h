@@ -2,6 +2,8 @@
 #define PROCESSO_H
 
 #include <string>
+#include <vector>
+#include <map>
 
 class Processo {
 private:
@@ -9,6 +11,7 @@ private:
     int tamanho;
     int endereco_base;  // Para alocação contígua
     bool ativo;
+    std::map<int, int> tabela_de_paginas; // Para paginação <pagina, frame>
     
 public:
     // Construtores
@@ -20,10 +23,12 @@ public:
     int getTamanho() const { return tamanho; }
     int getEnderecoBase() const { return endereco_base; }
     bool isAtivo() const { return ativo; }
+    const std::map<int, int>& getTabelaDePaginas() const { return tabela_de_paginas; }
     
     // Setters
     void setEnderecoBase(int endereco) { endereco_base = endereco; }
     void setAtivo(bool status) { ativo = status; }
+    void setTabelaDePaginas(const std::map<int, int>& tabela) { tabela_de_paginas = tabela; }
     
     // Métodos utilitários
     std::string toString() const;

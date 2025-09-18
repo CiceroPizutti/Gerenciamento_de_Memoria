@@ -8,12 +8,26 @@ using namespace std;
 // Construtor
 MemoriaContigua::MemoriaContigua(int tamanho) 
     : tamanho_total(tamanho), proximo_id(1), ponteiro_circular(0) {
-    // Inicializa com um único bloco livre de todo o tamanho
-    blocos.push_back(BlocoMemoria(0, tamanho, false, -1));
+    if (tamanho <= 0) {
+        cout << "Erro: Tamanho da memoria deve ser positivo. Inicializando com 1KB." << endl;
+        tamanho_total = 1; // Valor padrão para evitar problemas
+    }
+    if (tamanho_total > 0) {
+        blocos.push_back(BlocoMemoria(0, tamanho_total, false, -1));
+    }
 }
 
 // Método principal para alocar processo
 bool MemoriaContigua::alocarProcesso(int tamanho, AlgoritmoAlocacao algoritmo) {
+    if (tamanho <= 0) {
+        cout << "Erro: O tamanho do processo deve ser um valor positivo." << endl;
+        return false;
+    }
+    if (tamanho > tamanho_total) {
+        cout << "Erro: O tamanho do processo (" << tamanho << " KB) excede o tamanho total da memoria (" << tamanho_total << " KB)." << endl;
+        return false;
+    }
+
     int indice_bloco = encontrarMelhorBloco(tamanho, algoritmo);
     
     if (indice_bloco == -1) {
@@ -53,6 +67,11 @@ bool MemoriaContigua::alocarProcesso(int tamanho, AlgoritmoAlocacao algoritmo) {
 
 // Remover processo da memória
 bool MemoriaContigua::removerProcesso(int processo_id) {
+    if (processo_id <= 0) {
+        cout << "Erro: ID do processo invalido." << endl;
+        return false;
+    }
+
     auto it = processos.find(processo_id);
     if (it == processos.end()) {
         return false; // Processo não encontrado
@@ -250,6 +269,9 @@ double MemoriaContigua::calcularFragmentacaoExterna() const {
         }
     }
     
+    if (tamanho_total == 0) {
+        return 0.0; // Evita divisão por zero se a memória total for 0
+    }
     if (total_livre == 0) {
         return 0.0; // Sem espaço livre
     }

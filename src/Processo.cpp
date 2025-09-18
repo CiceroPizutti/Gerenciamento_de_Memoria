@@ -20,7 +20,10 @@ std::string Processo::toString() const {
     if (ativo && endereco_base != -1) {
         ss << " @ " << std::setw(4) << endereco_base 
            << "-" << std::setw(4) << getEnderecoFinal();
-    } else {
+    } else if (ativo && !tabela_de_paginas.empty()) {
+        ss << " [PAGINADO]";
+    }
+    else {
         ss << " [NAO ALOCADO]";
     }
     
