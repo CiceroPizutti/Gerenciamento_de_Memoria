@@ -1,28 +1,24 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -g
-SRCDIR = src
-SOURCES = $(SRCDIR)/main.cpp $(SRCDIR)/Processo.cpp $(SRCDIR)/MemoriaContigua.cpp
-TARGET = simulador-memoria
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
-# Regra principal
-$(TARGET): $(SOURCES)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SOURCES)
+SRCS = main.cpp Simulador.cpp MemoriaContigua.cpp Paginacao.cpp Processo.cpp
+OBJS = $(SRCS:.cpp=.o)
+TARGET = simulador
 
-# Regra para compilar e executar
-run: $(TARGET)
+.PHONY: all clean run
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET) simulador_memoria.zip
+
+run:
 	./$(TARGET)
 
-# Limpeza
-clean:
-	rm -f $(TARGET)
 
-# Regras que não geram arquivos
-.PHONY: clean run
-
-# Compilação com debug
-debug: CXXFLAGS += -DDEBUG
-debug: $(TARGET)
-
-# Compilação otimizada para release
-release: CXXFLAGS += -O2 -DNDEBUG
-release: $(TARGET)
