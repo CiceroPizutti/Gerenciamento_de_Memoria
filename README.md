@@ -55,13 +55,10 @@ simulador-memoria/
 ```bash
 # Clonar o repositório
 git clone [URL_DO_REPOSITORIO]
-cd simulador-memoria
 
 # Compilar o projeto
 make
 
-# Ou compilar manualmente
-g++ -std=c++11 -Wall -Wextra -o simulador-memoria src/*.cpp
 ```
 
 ### Execução
@@ -69,8 +66,6 @@ g++ -std=c++11 -Wall -Wextra -o simulador-memoria src/*.cpp
 # Executar o simulador
 ./simulador-memoria
 
-# Ou compilar e executar diretamente
-make run
 ```
 
 ## 📖 Funcionalidades Implementadas
