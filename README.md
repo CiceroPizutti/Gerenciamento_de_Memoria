@@ -32,19 +32,6 @@ Este projeto implementa um simulador educacional para demonstrar conceitos funda
 - Visualização ASCII da memória e tabelas de processos
 - Navegação por menus numerados
 
-### Arquitetura do Sistema
-```
-simulador-memoria/
-├── src/
-│   ├── main.cpp              # Interface principal e menus
-│   ├── Processo.h/cpp        # Classe para representar processos
-│   ├── MemoriaContigua.h/cpp # Algoritmos de alocação contígua
-│   └── Paginacao.h/cpp       # Sistema de paginação
-├── Makefile                  # Compilação automatizada
-├── README.md                 # Esta documentação
-
-```
-
 ## 🚀 Instruções de Compilação e Execução
 
 ### Pré-requisitos
