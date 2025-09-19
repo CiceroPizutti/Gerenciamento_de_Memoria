@@ -1,4 +1,3 @@
-# Gerenciamento_de_Memoria
 # Simulador de Gerenciamento de Memória
 
 ## 👥 Integrantes da Dupla
@@ -43,7 +42,7 @@ simulador-memoria/
 │   └── Paginacao.h/cpp       # Sistema de paginação
 ├── Makefile                  # Compilação automatizada
 ├── README.md                 # Esta documentação
-└── screenshots/              # Capturas de tela do simulador
+
 ```
 
 ## 🚀 Instruções de Compilação e Execução
@@ -72,13 +71,6 @@ g++ -std=c++11 -Wall -Wextra -o simulador-memoria src/*.cpp
 
 # Ou compilar e executar diretamente
 make run
-```
-
-### Comandos Úteis
-```bash
-make clean    # Remove arquivos compilados
-make debug    # Compila com símbolos de debug
-make release  # Compila otimizado para produção
 ```
 
 ## 📖 Funcionalidades Implementadas
@@ -160,14 +152,6 @@ Página 0 → Frame 3   Página 1 → Frame 2   Página 2 → Frame 0
 
 ## 🖼️ Screenshots e Exemplos
 
-### Exemplo de Uso - Alocação Contígua
-```
-1. Criar processo de 50KB com First-Fit
-2. Criar processo de 30KB com Best-Fit  
-3. Remover primeiro processo
-4. Verificar fragmentação externa resultante
-5. Comparar com mesmo cenário usando paginação
-```
 
 ### Comparação de Algoritmos
 | Algoritmo    | Fragmentação | Velocidade | Uso Típico |
@@ -178,25 +162,6 @@ Página 0 → Frame 3   Página 1 → Frame 2   Página 2 → Frame 0
 | Circular-Fit| Moderada    | Rápida     | Distribuída |
 
 ## 🎬 Conteúdo da Mini-Aula
-
-### Roteiro Planejado (15 minutos)
-1. **Introdução** (2 min): Problema do gerenciamento de memória
-2. **Alocação Contígua** (8 min):
-   - Demonstração dos 4 algoritmos
-   - Criação de cenário com fragmentação externa
-   - Comparação visual das estratégias
-3. **Paginação** (4 min):
-   - Como resolve fragmentação externa
-   - Trade-off: fragmentação interna
-   - Demonstração prática
-4. **Conclusão** (1 min): Quando usar cada abordagem
-
-### Cenários Demonstrados
-- **Cenário 1**: Fragmentação externa severa com Worst-Fit
-- **Cenário 2**: Comparação First vs Best vs Worst-Fit
-- **Cenário 3**: Mesmo problema resolvido com paginação
-- **Cenário 4**: Fragmentação interna em páginas grandes
-
 
 ## 🤝 Contribuições
 
@@ -215,6 +180,3 @@ Ambos os integrantes da dupla contribuíram igualmente para o desenvolvimento:
 ## 📝 Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte da disciplina de Sistemas Operacionais.
-
----
-*Desenvolvido com ❤️ para aprender conceitos fundamentais de SO*
