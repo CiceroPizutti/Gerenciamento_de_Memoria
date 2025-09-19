@@ -150,9 +150,6 @@ Página 0 → Frame 3   Página 1 → Frame 2   Página 2 → Frame 0
 - Tratamento de IDs de processos inexistentes
 - Limpeza automática de ponteiros
 
-## 🖼️ Screenshots e Exemplos
-
-
 ### Comparação de Algoritmos
 | Algoritmo    | Fragmentação | Velocidade | Uso Típico |
 |-------------|-------------|------------|------------|
@@ -160,8 +157,6 @@ Página 0 → Frame 3   Página 1 → Frame 2   Página 2 → Frame 0
 | Best-Fit    | Baixa       | Lenta      | Otimização |
 | Worst-Fit   | Alta        | Lenta      | Casos especiais |
 | Circular-Fit| Moderada    | Rápida     | Distribuída |
-
-## 🎬 Conteúdo da Mini-Aula
 
 ## 🤝 Contribuições
 
